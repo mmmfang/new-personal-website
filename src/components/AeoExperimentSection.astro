@@ -1,0 +1,34 @@
+---
+import '../styles/aeo-experiment.css';
+import { siteContent } from '../data/siteContent';
+const { aeoExperiment } = siteContent;
+const metrics = [
+  { label: 'Baseline test date', value: aeoExperiment.baseline.date },
+  { label: 'Prompt set', value: aeoExperiment.baseline.promptSet },
+  { label: 'ChatGPT mentions', value: aeoExperiment.baseline.mentions },
+  { label: 'AI Visibility Rate', value: aeoExperiment.baseline.visibilityRate },
+  { label: 'Citation Rate', value: aeoExperiment.baseline.citationRate },
+];
+---
+<section class="aeo-lab" id="ai-search-lab" aria-labelledby="aeo-lab-title">
+  <div class="aeo-heading">
+    <div><p class="eyebrow">AI Search Lab</p><h2 id="aeo-lab-title">Testing how new products become visible in AI search</h2></div>
+    <p>I’m building AEO expertise through hands-on experiments—including a public test to see whether Sew What’s Next can become discoverable in AI-generated answers.</p>
+  </div>
+  <article class="experiment-card">
+    <div class="experiment-copy">
+      <div class="experiment-status"><span></span> Baseline established · Experiment active</div>
+      <p class="experiment-kicker">{aeoExperiment.subtitle}</p>
+      <h3>{aeoExperiment.title}</h3>
+      <p class="experiment-description">{aeoExperiment.description}</p>
+      <p class="experiment-process">{aeoExperiment.process}</p>
+      <a class="button primary" href={aeoExperiment.url}>View Experiment <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="experiment-dashboard" aria-label="Experiment baseline metrics">
+      <div class="dashboard-header"><span>Baseline scorecard</span><span>{aeoExperiment.baseline.model}</span></div>
+      <div class="metric-grid">{metrics.map(metric => <div class="metric"><span>{metric.label}</span><strong>{metric.value}</strong></div>)}</div>
+      <div class="prompt-visual" aria-hidden="true"><div><span>Prompt set</span><i></i></div><div><span>Measure mentions</span><i></i></div><div><span>Track citations</span><i></i></div><div><span>Rerun</span><i></i></div></div>
+    </div>
+  </article>
+  <div class="lab-support"><a href="/#writing"><span>01</span><div><h3>AEO Notes</h3><p>Short observations on what AI search tools surface, miss, and reward.</p></div><b>→</b></a><a href="/ai-search-lab/sew-whats-next-aeo-experiment"><span>02</span><div><h3>Visibility Tracker</h3><p>A running record of prompts, mentions, citations, competitors, and experiment rounds.</p></div><b>→</b></a></div>
+</section>

@@ -1,0 +1,8 @@
+---
+import '../styles/focus-approach.css'; import '../styles/credential-proof.css'; import { siteContent } from '../data/siteContent';
+const { credential } = siteContent;
+---
+<div class="focus-closure">
+  <div class="focus-approach"><div><p class="eyebrow">How I work</p><h3>Strategy is most useful when it can become something real.</h3></div><div><p>I work across the full website lifecycle—from understanding the problem and organizing the experience to measuring what happens and building what comes next.</p><p>My favorite projects live where structure and imagination overlap: complex enough to need systems thinking, human enough to reward care, and new enough to invite experimentation.</p></div></div>
+  <div class="credential-proof"><div class="credential-thumb"><img src={credential.image} alt="" loading="lazy"/></div><div><span>Continuous learning</span><strong>{credential.title}</strong><small>{credential.issuer}</small></div><a href={credential.link} target="_blank" rel="noreferrer" aria-label={`View ${credential.title} credential`}>View credential ↗</a></div>
+</div>

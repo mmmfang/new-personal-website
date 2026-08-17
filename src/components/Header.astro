@@ -1,0 +1,4 @@
+---
+import { siteContent } from '../data/siteContent';
+---
+<header class="site-header"><div class="page-shell header-inner"><a class="wordmark" href="/">Mae F.<i></i></a><nav aria-label="Primary"><ul>{siteContent.navigation.map((item) => <li><a href={item.href}>{item.label}</a></li>)}</ul></nav></div></header>
