@@ -1,8 +1,8 @@
 export const siteContent = {
   meta: { title: 'Mae Fang — Web Strategist focused on AI & AEO', description: 'Website strategy, SEO and AEO, UX, optimization, implementation, and AI-powered digital products.' },
   navigation: [
-    { label: 'Projects', href: '#projects' }, { label: 'AI Search Lab', href: '#ai-search-lab' },
-    { label: 'About', href: '#about' }, { label: 'Contact', href: '#contact' },
+    { label: 'Projects', href: '/#projects' }, { label: 'AI Search Lab', href: '/#ai-search-lab' },
+    { label: 'About', href: '/#about' }, { label: 'Contact', href: '/#contact' },
   ],
   hero: { eyebrow: 'Strategy · Experience · Experimentation', name: 'Mae F.', headline: 'Web Strategist focused on AI & AEO', introduction: 'I lead and improve websites across strategy, analytics, UX, optimization, and implementation — while building hands-on expertise in AI search and AEO.' },
   strengths: [
@@ -11,7 +11,7 @@ export const siteContent = {
     { title: 'UX & Optimization', description: 'Evidence-led improvements that make complex journeys feel simple.' },
     { title: 'AI Product Building', description: 'Useful experiments that turn emerging technology into practical tools.' },
   ],
-  featuredProject: { eyebrow: 'Flagship build', title: "Sew What’s Next", subtitle: 'A sewing decision-making companion built around what you already own', description: 'Sew What’s Next is an independent personal project I built to solve a recurring problem in my own sewing: deciding what to make with the patterns and fabric I already had.', userStory: 'Rather than simply cataloging a stash, it connects fabric quantities with compatible patterns and helps turn outside inspiration into a realistic project plan. I used it myself after finding an overall dress online—working through whether I had enough fabric, which patterns could create a similar result, and what I could make without starting from scratch.', features: ['Match available fabric with patterns you already own', 'Turn online inspiration into feasible project options', 'Move from “What could I make?” to a confident next project'], link: 'https://sew-whats-next.lovable.app/demo', image: '/images/sew-whats-next.png' },
+  featuredProject: { eyebrow: 'Flagship build', title: "Sew What’s Next", subtitle: 'A sewing decision-making companion built around what you already own', description: 'Sew What’s Next is an independent personal project I built to solve a recurring problem in my own sewing: deciding what to make with the patterns and fabric I already had.', userStory: 'Rather than simply cataloging a stash, it connects fabric quantities with compatible patterns and helps turn outside inspiration into a realistic project plan. I used it myself after finding an overall dress online—working through whether I had enough fabric, which patterns could create a similar result, and what I could make without starting from scratch.', features: ['Match available fabric with patterns you already own', 'Turn online inspiration into feasible project options', 'Move from “What could I make?” to a confident next project'], link: 'https://sew-whats-next.com', image: '/images/sew-whats-next.png' },
   project: { eyebrow: 'Supporting build', title: 'One-Tap Transit', description: 'An accessible one-tap transit PWA designed to simplify recurring public transportation trips for a senior rider.', note: 'Private project — details are limited to protect the person it was built for.', image: '/images/transit-app-pwa.png' },
   focusAreas: [
     { title: 'Web Strategy & Roadmaps', description: 'Connecting audience needs, business goals, content strategy, governance, and technical priorities into actionable cross-functional website roadmaps.' },

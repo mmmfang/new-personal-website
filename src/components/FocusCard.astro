@@ -1,4 +1,4 @@
 ---
 const { title, description, number } = Astro.props;
 ---
-<article class="focus-card"><p class="focus-number">{number}</p><h3>{title}</h3><p>{description}</p></article>
+<li class="focus-card"><p class="focus-number" aria-hidden="true">{number}</p><h3>{title}</h3><p>{description}</p></li>
