@@ -4,7 +4,7 @@ export const siteContent = {
     { label: 'Projects', href: '/#projects' }, { label: 'AI Search Lab', href: '/#ai-search-lab' },
     { label: 'About', href: '/#about' }, { label: 'Contact', href: '/#contact' },
   ],
-  hero: { eyebrow: 'Strategy · Experience · Experimentation', name: 'Mae F.', headline: 'Web Strategist focused on AI & AEO', introduction: 'I lead and improve websites across strategy, analytics, UX, optimization, and implementation — while building hands-on expertise in AI search and AEO.' },
+  hero: { eyebrow: 'Strategy · Experience · Experimentation', name: 'Mae F.', headline: 'Web Strategist focused on AI & AEO', introduction: 'I lead and improve high-traffic websites from strategy through implementation - connecting user experience, analytics, optimization, and emerging AI search.' },
   strengths: [
     { title: 'Website Strategy', description: 'Roadmaps that connect audience needs, business goals, content, and execution.' },
     { title: 'SEO / AEO', description: 'Visibility strategies designed for search engines and AI answer experiences.' },
