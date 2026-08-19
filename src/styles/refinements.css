@@ -1,9 +1,8 @@
 h2{font-size:clamp(2.25rem,3.8vw,3.8rem)}
 .projects-section .aeo-lab .aeo-heading h2{font-size:clamp(2.15rem,3.4vw,3.45rem)}
 .contact-section{padding:52px 0;text-align:left}
-.contact-inner{max-width:1180px;display:grid;grid-template-columns:1fr auto;grid-template-areas:"eyebrow action" "heading action" "copy action";column-gap:60px;align-items:center}
-.contact-inner .eyebrow{grid-area:eyebrow;margin-bottom:7px;color:var(--lav)}
+.contact-inner{max-width:1180px;display:grid;grid-template-columns:1fr auto;grid-template-areas:"heading action" "copy action";column-gap:60px;align-items:center}
 .contact-inner h2{grid-area:heading;font-size:clamp(1.85rem,3vw,2.7rem)}
 .contact-section>div>p:not(.eyebrow){grid-area:copy;margin:8px 0 0;max-width:620px;font-size:.88rem}
 .contact-section .button{grid-area:action;margin:0;white-space:nowrap}
-@media(max-width:620px){.contact-inner{grid-template-columns:1fr;grid-template-areas:"eyebrow" "heading" "copy" "action"}.contact-section .button{justify-self:start;margin-top:22px}}
+@media(max-width:620px){.contact-inner{grid-template-columns:1fr;grid-template-areas:"heading" "copy" "action"}.contact-section .button{justify-self:start;margin-top:22px}}
