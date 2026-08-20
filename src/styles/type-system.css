@@ -1,0 +1,198 @@
+/*
+ * Site-wide type and content rhythm.
+ *
+ * Component styles should consume these tokens instead of inventing new type
+ * sizes or heading margins. Compact UI labels, metrics, and navigation may
+ * remain component-specific; editorial copy and semantic headings belong here.
+ */
+:root {
+  --type-display: clamp(3rem, 5vw, 5.1rem);
+  --type-section: clamp(2.25rem, 3.6vw, 3.6rem);
+  --type-subsection: clamp(1.5rem, 2.4vw, 2.4rem);
+  --type-minor-heading: clamp(1.25rem, 1.8vw, 1.65rem);
+  --type-content-heading: clamp(1.75rem, 3vw, 2.2rem);
+  --type-body: 1rem;
+  --type-body-large: 1.0625rem;
+  --type-callout: 1.15rem;
+  --type-action: 0.9rem;
+  --type-label: 0.72rem;
+
+  --leading-heading: 1.08;
+  --leading-body: 1.7;
+  --leading-compact: 1.5;
+
+  --space-copy: 1rem;
+  --space-list-item: 0.375rem;
+  --space-heading-copy: 1.25rem;
+  --space-subsection: 3rem;
+  --measure-copy: 70ch;
+
+  --status-active-text: #24543a;
+  --status-active-background: #e2f0e7;
+  --status-active-indicator: #2f7d4f;
+}
+
+body {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 0 var(--space-heading-copy);
+}
+
+h1 { font-size: var(--type-display); }
+h2 { font-size: var(--type-section); }
+h3 { font-size: var(--type-subsection); }
+h4 { font-size: var(--type-minor-heading); }
+
+p,
+ul,
+ol {
+  margin-block: 0 var(--space-copy);
+}
+
+/* Paragraph size is intentionally universal; components may not override it. */
+p {
+  font-size: var(--type-body) !important;
+}
+
+ul,
+ol,
+li {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+:where(main ul:not([class]), main ol:not([class])) li + li,
+.prose li + li,
+.experiment-page > section li + li {
+  margin-top: var(--space-list-item);
+}
+
+/* Long-form reading defaults shared by articles and experiment pages. */
+.prose,
+.experiment-page > section {
+  font-size: var(--type-body-large);
+  line-height: var(--leading-body);
+}
+
+.prose > :where(p, ul, ol),
+.experiment-page > section > :where(p, ul, ol) {
+  max-width: var(--measure-copy);
+}
+
+.prose > :where(h2, h3, h4) {
+  margin-top: var(--space-subsection);
+}
+
+.prose h2 {
+  font-size: var(--type-content-heading);
+}
+
+.prose h3 {
+  font-size: var(--type-minor-heading);
+}
+
+.prose > :first-child,
+.experiment-page > section > :first-child {
+  margin-top: 0;
+}
+
+/* Eyebrows are labels, not body copy. */
+.eyebrow {
+  display: block;
+  font-size: var(--type-label);
+  line-height: var(--leading-compact);
+  margin-bottom: 1.125rem;
+}
+
+.experiment-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.625rem;
+  border-radius: 999px;
+  background: var(--status-active-background);
+  color: var(--status-active-text);
+  font-size: var(--type-label);
+  font-weight: 600;
+  line-height: var(--leading-compact);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.experiment-status > span:first-child {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--status-active-indicator);
+}
+
+.callout {
+  padding: 1.5625rem 1.6875rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid #8c73c4;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: #f0ecf4;
+  box-shadow: none;
+  color: var(--navy);
+}
+
+.callout-label {
+  display: inline-flex;
+  margin-bottom: 0.625rem;
+  padding: 0.375rem 0.625rem;
+  border-radius: 999px;
+  background: rgba(255, 250, 243, 0.7);
+  color: #684e96;
+  font-size: var(--type-label);
+  font-weight: 600;
+  line-height: var(--leading-compact);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.callout > p:last-child {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--type-callout) !important;
+  line-height: 1.45;
+}
+
+/* Section-heading components own layout; this file owns their rhythm. */
+.section-heading { margin-bottom: var(--space-subsection); }
+
+.section-heading :where(h1, h2, h3),
+.article-header :where(h1, h2, h3),
+.experiment-page-header :where(h1, h2, h3) {
+  margin-bottom: var(--space-heading-copy);
+}
+
+.section-heading > :last-child,
+.section-heading > div > :last-child,
+.article-header > :last-child,
+.experiment-page-header > :last-child {
+  margin-bottom: 0;
+}
+
+/* Explicit compact UI exceptions. */
+.credential-proof h3 {
+  font-size: 1rem;
+  line-height: var(--leading-compact);
+}
+
+nav li,
+.proof-row li,
+.footer-inner,
+.phase-scorecard,
+.baseline-record,
+.detail-metrics {
+  line-height: var(--leading-compact);
+}
