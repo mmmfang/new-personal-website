@@ -1,11 +1,54 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'; import Header from '../../components/Header.astro'; import Footer from '../../components/Footer.astro'; import { siteContent } from '../../data/siteContent'; import '../../styles/aeo-experiment.css';
 const { aeoExperiment } = siteContent;
-const metrics=[['Baseline test date',aeoExperiment.baseline.date],['Model',aeoExperiment.baseline.model],['Prompt set',aeoExperiment.baseline.promptSet],['ChatGPT mentions',aeoExperiment.baseline.mentions],['AI Visibility Rate',aeoExperiment.baseline.visibilityRate],['Citation Rate',aeoExperiment.baseline.citationRate]];
+const phaseOneChanges = [
+  ['Launched sew-whats-next.com', ' as the product’s dedicated public domain.'],
+  ['Reworked the homepage', ' to clearly describe Sew What’s Next as a sewing-planning app that matches fabric you already own with sewing patterns.'],
+  ['Published How to Match Fabric in Your Stash to Sewing Patterns', ', targeting one of the strongest user intents identified during the baseline.'],
+  ['Added Article structured data', ' to the guide and standardized public and sitemap URLs around the new domain.'],
+  ['Verified crawlability', ', submitted the page and sitemap through Google Search Console, and began monitoring indexing.'],
+  ['Added a real product snapshot', ' to connect the educational content with the working app.'],
+];
 ---
-<BaseLayout title="Sew What’s Next AEO Experiment | Mae Fang" description="A public Answer Engine Optimization experiment tracking whether Sew What’s Next can become discoverable in AI-generated answers for sewing planning and fabric stash queries."><Header/><main id="main-content" class="experiment-page page-shell"><a class="back-link" href="/#projects">← Back to selected work</a><header class="experiment-page-header"><p class="eyebrow">AI Search Lab · Public experiment</p><h1>Sew What’s Next AEO Experiment</h1><p>A measurable, public test of whether a new niche product can earn visibility in AI-generated answers.</p><div class="experiment-status"><span aria-hidden="true"></span> Baseline established · Experiment active</div></header>
+<BaseLayout title="Sew What’s Next AEO Experiment | Mae Fang" description="A public Answer Engine Optimization experiment tracking whether Sew What’s Next can become discoverable in AI-generated answers for sewing planning and fabric stash queries."><Header/><main id="main-content" class="experiment-page page-shell"><a class="back-link" href="/">← Back to homepage</a><header class="experiment-page-header"><p class="eyebrow">AI Search Lab · Active experiment</p><h1>Sew What’s Next AEO Experiment</h1><p>A measurable, public test of whether a new niche product can earn visibility in AI-generated answers.</p></header>
 <section><h2>Experiment Overview</h2><p>{aeoExperiment.description}</p><p>{aeoExperiment.process}</p></section>
-<section><h2>Baseline</h2><p>The first frozen test establishes the starting point. These numbers do not claim improvement; they give future experiment rounds something consistent to compare against.</p><dl class="detail-metrics">{metrics.map(([label,value])=><div class="metric"><dt>{label}</dt><dd>{value}</dd></div>)}</dl></section>
-<section><h2>Methodology</h2><ol class="method-list"><li><strong>Establish a baseline</strong><span>Run a fixed set of 15 prompts and record mentions, citations, competitors, and answer patterns.</span></li><li><strong>Analyze competing answers</strong><span>Study the products and sources surfaced for sewing planning, fabric stash, and pattern-matching queries.</span></li><li><strong>Make targeted changes</strong><span>Improve first-party content and technical signals based on gaps revealed by the baseline.</span></li><li><strong>Rerun and document</strong><span>Repeat the frozen prompt set, compare results, and publish what changed.</span></li></ol></section>
-<section><h2>Results Over Time</h2><div class="results-placeholder"><strong>Round 0 · Baseline</strong><span>August 15, 2026</span><p>0 of 15 ChatGPT prompts mentioned Sew What’s Next. Visibility and citation rates both began at 0%.</p></div></section>
+<section><h2>Methodology</h2><ol class="method-list"><li><strong>Establish a baseline.</strong> Run a fixed set of 15 prompts and record mentions, citations, competitors, and answer patterns.</li><li><strong>Analyze competing answers.</strong> Study the products and sources surfaced for sewing planning, fabric stash, and pattern-matching queries.</li><li><strong>Make targeted changes.</strong> Improve first-party content and technical signals based on gaps revealed by the baseline.</li><li><strong>Rerun and document.</strong> Repeat the frozen prompt set, compare results, and publish what changed.</li></ol></section>
+<section><h2>Baseline</h2><p>The first frozen test establishes the starting point. These numbers do not claim improvement; they give future experiment rounds something consistent to compare against.</p>
+  <div class="baseline-record" aria-label="Experiment baseline scorecard">
+    <div class="baseline-record-top"><span>Baseline scorecard</span><time datetime="2026-08-15">{aeoExperiment.baseline.date}</time></div>
+    <div class="baseline-platforms" aria-label="Platforms tested">{aeoExperiment.baseline.platforms.map(platform => <span>{platform}</span>)}</div>
+    <dl class="baseline-results">
+      <div><dt>Prompt set</dt><dd>{aeoExperiment.baseline.promptSet}</dd></div>
+      <div><dt>Total responses</dt><dd>{aeoExperiment.baseline.totalResponses}</dd></div>
+      <div><dt>Brand mentions</dt><dd>{aeoExperiment.baseline.mentions}</dd></div>
+      <div><dt>Citation rate</dt><dd>{aeoExperiment.baseline.citationRate}</dd></div>
+    </dl>
+  </div></section>
+<section class="phase-one" aria-labelledby="phase-one-title">
+  <header class="phase-one-header">
+    <div class="phase-one-kicker"><span>Phase 1</span><time datetime="2026-08-15">August 15–19, 2026</time></div>
+    <h2 id="phase-one-title">Build the AEO Foundation</h2>
+    <p>After establishing a <strong>0% AI visibility baseline</strong>, I focused on making Sew What’s Next easier for search and answer engines to discover, understand, and connect with its core use case.</p>
+  </header>
+  <dl class="phase-one-summary" aria-label="Phase 1 summary">
+    <div><dt>Starting point</dt><dd>0%</dd><span>AI visibility baseline</span></div>
+    <div><dt>Changes shipped</dt><dd>6</dd><span>across product and content</span></div>
+    <div><dt>Next measurement</dt><dd>60</dd><span>responses across four platforms</span></div>
+  </dl>
+  <div class="phase-one-work">
+    <h3>What I shipped</h3>
+    <ol class="phase-one-timeline">
+      {phaseOneChanges.map(([action, detail]) => <li><span class="phase-check" aria-hidden="true">✓</span><p><strong>{action}</strong>{detail}</p></li>)}
+    </ol>
+  </div>
+  <aside class="phase-hypothesis" aria-labelledby="phase-hypothesis-title">
+    <p class="phase-card-label" id="phase-hypothesis-title">The hypothesis</p>
+    <p>Stronger first-party entity signals, clearer use-case language, and useful content tied directly to the product will increase the likelihood that Sew What’s Next appears in relevant AI-generated answers.</p>
+  </aside>
+  <div class="phase-next">
+    <span aria-hidden="true">→</span>
+    <div><h3>Next: Run Round 1</h3><p>Repeat the same frozen set of 15 prompts across ChatGPT, Claude, Google AI Mode, and Gemini, then compare visibility, citations, and competitor mentions against the August 15 baseline.</p></div>
+  </div>
+</section>
+<section><h2>Results Over Time</h2><div class="results-placeholder"><strong>Round 0 · Baseline</strong><span>August 15, 2026</span><p>0 of 60 responses across ChatGPT, Claude, Google AI Mode, and Gemini mentioned Sew What’s Next. Visibility and citation rates both began at 0%.</p></div></section>
 <section><h2>What I’m Learning</h2><p>This page will become the source of record for the experiment. Future updates will separate observed changes from hypotheses and document both positive and negative results.</p></section></main><Footer/></BaseLayout>

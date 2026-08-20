@@ -2,7 +2,7 @@
 import '../styles/flagship-case-study.css';
 import { siteContent } from '../data/siteContent';
 const { featuredProject: app, aeoExperiment: experiment } = siteContent;
-const metrics=[['Prompt set',experiment.baseline.promptSet],['ChatGPT mentions',experiment.baseline.mentions],['AI visibility',experiment.baseline.visibilityRate],['Citation rate',experiment.baseline.citationRate]];
+const metrics=[['Prompt set',experiment.baseline.promptSet],['Brand mentions',experiment.baseline.mentions],['AI visibility',experiment.baseline.visibilityRate],['Citation rate',experiment.baseline.citationRate]];
 ---
 <article class="flagship-story" aria-labelledby="flagship-title">
   <header class="flagship-header"><div><p class="eyebrow">Case study</p><h3 id="flagship-title">Sew What’s Next</h3></div><p>One product, two connected stages: first I built an AI-powered tool around a real maker problem. Now I’m using it to test how new products become visible in AI search.</p></header>
@@ -13,6 +13,6 @@ const metrics=[['Prompt set',experiment.baseline.promptSet],['ChatGPT mentions',
   <div class="story-bridge"><p class="story-bridge-label">Next question</p><p>Once the product was live, I asked a second question: <strong>could a new niche app become visible in AI-generated answers?</strong></p></div>
   <section class="story-phase experiment-phase" id="ai-search-lab" aria-labelledby="experiment-title">
     <div class="phase-copy"><p class="phase-label"><span>02</span> Measure discoverability</p><div class="experiment-status"><span aria-hidden="true"></span> Baseline established · Experiment active</div><h4 id="experiment-title">{experiment.title}</h4><p>{experiment.description}</p><p class="phase-process">{experiment.process}</p><a class="button primary" href={experiment.url}>View experiment <span aria-hidden="true">→</span></a></div>
-    <section class="phase-scorecard" aria-label="Experiment baseline scorecard"><div class="scorecard-top"><span>Baseline scorecard</span><span>{experiment.baseline.date}</span></div><dl class="story-metrics">{metrics.map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl><p>Model tested: <strong>{experiment.baseline.model}</strong></p></section>
+    <section class="phase-scorecard" aria-label="Experiment baseline scorecard"><div class="scorecard-top"><span>Baseline scorecard</span><span>{experiment.baseline.date}</span></div><dl class="story-metrics">{metrics.map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl><p>Platforms tested: <strong>{experiment.baseline.model}</strong></p></section>
   </section>
 </article>
