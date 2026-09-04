@@ -9,8 +9,23 @@ const phaseOneChanges = [
   ['Added technical schema', ' and fixed the sitemap to match the new domain.'],
   ['Verified crawlability', ', submitted the page and sitemap through Google Search Console, and began monitoring indexing.'],
 ];
+const measurementOne = [
+  { platform: 'ChatGPT', result: '3 of 15', rate: 20, gained: true },
+  { platform: 'Claude', result: '0 of 15', rate: 0, gained: false },
+  { platform: 'Google AI Mode', result: '0 of 15', rate: 0, gained: false },
+  { platform: 'Gemini', result: '0 of 15', rate: 0, gained: false },
+];
 ---
-<BaseLayout title="Sew What’s Next AEO Experiment | Mae Fang" description="A public Answer Engine Optimization experiment tracking whether Sew What’s Next can become discoverable in AI-generated answers for sewing planning and fabric stash queries."><main id="main-content" class="experiment-page page-shell"><a class="back-link" href="/">← Back to homepage</a><header class="experiment-page-header"><span class="eyebrow">AI Search Lab · Active experiment</span><h1>Sew What’s Next AEO Experiment</h1><p>A measurable, public test of whether a new niche product can earn visibility in AI-generated answers.</p></header>
+<BaseLayout title="Sew What’s Next AEO Experiment | Mae Fang" description="A public Answer Engine Optimization experiment tracking whether Sew What’s Next can become discoverable in AI-generated answers for sewing planning and fabric stash queries."><main id="main-content" class="experiment-page page-shell"><a class="back-link" href="/">← Back to homepage</a><header class="experiment-page-header"><span class="eyebrow">AI Search Lab · Active experiment</span><h1>Sew What’s Next AEO Experiment</h1><p>A measurable, public test of whether a new niche product can earn visibility in AI-generated answers.</p>
+  <aside class="featured-result" aria-label="Latest experiment result">
+    <div class="featured-result-change">
+      <span class="featured-result-label">Latest result</span>
+      <span class="featured-result-numbers"><span>0%</span><span aria-hidden="true">→</span><strong>20%</strong></span>
+    </div>
+    <div class="featured-result-copy"><strong>ChatGPT visibility after Phase 1</strong><span>3 of 15 prompts · 3 cited recommendations</span></div>
+    <a class="featured-result-link" href="#measurement-one-title">See the results <span aria-hidden="true">↓</span></a>
+  </aside>
+</header>
 <section><h2>Experiment Overview</h2><p>{aeoExperiment.description}</p><p>{aeoExperiment.process}</p></section>
 <section><h2>Methodology</h2><ol class="method-list"><li><strong>Establish a baseline.</strong> Run a fixed set of 15 prompts and record mentions, citations, competitors, and answer patterns.</li><li><strong>Analyze competing answers.</strong> Study the products and sources surfaced for sewing planning, fabric stash, and pattern-matching queries.</li><li><strong>Make targeted changes.</strong> Improve first-party content and technical signals based on gaps revealed by the baseline.</li><li><strong>Rerun and document.</strong> Repeat the frozen prompt set, compare results, and publish what changed.</li></ol></section>
 <section><h2>Baseline</h2><p>The first frozen test establishes the starting point. These numbers do not claim improvement; they give future experiment rounds something consistent to compare against.</p>
@@ -40,10 +55,94 @@ const phaseOneChanges = [
     <span class="callout-label" id="phase-hypothesis-title">The hypothesis</span>
     <p>Clear product positioning, stronger connections between the app and its supporting content, and pages built around relevant questions may improve Sew What’s Next’s visibility in AI-generated answers.</p>
   </aside>
+</section>
+<section class="measurement-one" aria-labelledby="measurement-one-title">
+  <header class="measurement-header">
+    <div class="measurement-kicker"><span class="eyebrow">Measurement 1</span><time datetime="2026-09-03">September 3, 2026</time></div>
+    <h2 id="measurement-one-title">ChatGPT visibility reached 20%</h2>
+    <p>After Phase 1, Sew What’s Next appeared in 3 of 15 ChatGPT responses. All three recommendations cited sew-whats-next.com.</p>
+  </header>
+  <div class="visibility-shift" data-visibility-shift>
+    <div class="result-highlight">
+      <span class="result-label">ChatGPT visibility</span>
+      <div class="result-number" aria-hidden="true"><span data-count>0</span>%</div>
+      <span class="result-delta">Up 20 percentage points</span>
+    </div>
+    <div class="platform-results" aria-label="Visibility by platform">
+      {measurementOne.map(item => (
+        <div class:list={["platform-result", { "platform-result-gain": item.gained }]}>
+          <span class="platform-name">{item.platform}</span>
+          <span class="platform-track" aria-hidden="true"><span style={`--result-width: ${item.rate}%`}></span></span>
+          <span class="platform-rate">{item.rate}%</span>
+          <span class="platform-count">{item.result}</span>
+        </div>
+      ))}
+    </div>
+    <p class="sr-only">ChatGPT visibility increased from 0 percent to 20 percent. Claude, Google AI Mode, and Gemini remained at 0 percent.</p>
+  </div>
+  <ul class="result-proof" aria-label="ChatGPT result details">
+    <li><strong>3 of 15</strong><span>cited recommendations</span></li>
+    <li><strong>2</strong><span>ranked first</span></li>
+    <li><strong>1</strong><span>ranked second</span></li>
+  </ul>
+  <p class="measurement-note"><strong>A note about the result:</strong> The increase happened after Phase 1, but this test cannot prove that those changes caused it. AI answers can change from one test to the next.</p>
+</section>
+<section aria-labelledby="learning-title">
+  <h2 id="learning-title">What I’ve learned</h2>
+  <ol class="learning-list">
+    <li><p><strong>Clear positioning helped ChatGPT find and cite the product.</strong> After I launched the website and added copy focused on what I wanted the app to be known for, ChatGPT surfaced it for specific prompts in a niche without a clear category leader.</p></li>
+    <li><p><strong>Publishing a website does not make it a trusted source.</strong> This matches my SEO experience: “If you build it, they will come” is not true. Google and Gemini did not cite the site simply because it was online. A new site still needs trust signals such as backlinks, external references, and domain authority.</p></li>
+    <li><p><strong>Other answer engines still favored established sources.</strong> Claude, Gemini, and Google AI Mode surfaced better-known products that have been around longer and appear in “best sewing app” articles. This matches AEO research I’ve read suggesting that Claude gives significant weight to third-party mentions from established media outlets.</p></li>
+  </ol>
+</section>
+<section aria-labelledby="results-history-title">
+  <h2 id="results-history-title">Results over time</h2>
+  <ol class="results-history">
+    <li><time datetime="2026-08-15">August 15, 2026</time><div><strong>Round 0 · Baseline</strong><p>ChatGPT visibility began at 0 of 15 prompts, or 0%.</p></div></li>
+    <li><time datetime="2026-09-03">September 3, 2026</time><div><strong>Measurement 1 · After Phase 1</strong><p>ChatGPT visibility reached 3 of 15 prompts, or 20%. Claude, Google AI Mode, and Gemini remained at 0%.</p></div></li>
+  </ol>
   <div class="phase-next">
     <span aria-hidden="true">→</span>
-    <div><h3>Next: Run Round 1</h3><p>Repeat the same frozen set of 15 prompts across ChatGPT, Claude, Google AI Mode, and Gemini, then compare visibility, citations, and competitor mentions against the August 15 baseline.</p></div>
+    <div><h3>Next: Build authority beyond the website</h3><p>Phase 2 will focus on gaining relevant third-party mentions and backlinks, then repeating the same prompt set to see what changes.</p></div>
   </div>
 </section>
-<section><h2>Results Over Time</h2><div class="results-placeholder"><strong>Round 0 · Baseline</strong><span>August 15, 2026</span><p>0 of 60 responses across ChatGPT, Claude, Google AI Mode, and Gemini mentioned Sew What’s Next. Visibility and citation rates both began at 0%.</p></div></section>
-<section><h2>What I’m Learning</h2><p>This page will become the source of record for the experiment. Future updates will separate observed changes from hypotheses and document both positive and negative results.</p></section></main><Footer/></BaseLayout>
+<script>
+  const visibilityGraphic = document.querySelector('[data-visibility-shift]');
+
+  if (visibilityGraphic) {
+    const count = visibilityGraphic.querySelector('[data-count]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const revealResult = () => {
+      visibilityGraphic.classList.add('is-visible');
+
+      if (!count) return;
+      if (prefersReducedMotion) {
+        count.textContent = '20';
+        return;
+      }
+
+      const duration = 900;
+      let startTime;
+      const updateCount = (time) => {
+        startTime ??= time;
+        const progress = Math.min((time - startTime) / duration, 1);
+        count.textContent = String(Math.round(progress * 20));
+        if (progress < 1) window.requestAnimationFrame(updateCount);
+      };
+      window.requestAnimationFrame(updateCount);
+    };
+
+    if ('IntersectionObserver' in window && !prefersReducedMotion) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        revealResult();
+        observer.disconnect();
+      }, { threshold: 0.35 });
+      observer.observe(visibilityGraphic);
+    } else {
+      revealResult();
+    }
+  }
+</script>
+</main><Footer/></BaseLayout>
