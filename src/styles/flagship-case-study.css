@@ -24,6 +24,7 @@
 .story-metrics dt{display:block;font-size:.65rem;color:#aeb9c5}
 .story-metrics dd{display:block;font:500 1.45rem var(--serif);margin:3px 0 0}
 .phase-scorecard>p{color:#aeb9c5;margin-bottom:0}
+.phase-scorecard .scorecard-summary strong{color:white;font-family:var(--serif);font-weight:500}
 
 @media(max-width:900px){.flagship-header,.story-phase{grid-template-columns:1fr}
 .phase-visual{height:390px;margin:0 35px 35px}
